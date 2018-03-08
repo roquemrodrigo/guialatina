@@ -2,3 +2,8 @@ rodrigo_list:
   path:   /list
   defaults: { _controller: "AppBundle:Rodrigo:list" }
   methods:  GET
+
+rodrigo_list2:
+  path:   /list2
+  defaults: { _controller: "AppBundle:Rodrigo:list2" }
+  methods:  GET
