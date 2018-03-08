@@ -9,3 +9,8 @@ app_aziende:
 app_news:
   resource: "@AppBundle/Resources/config/routing/news.yml"
   prefix: /news
+
+
+app_rodrigo:
+  resource: "@AppBundle/Resources/config/routing/rodrigo.yml"
+  prefix: /rodrigo

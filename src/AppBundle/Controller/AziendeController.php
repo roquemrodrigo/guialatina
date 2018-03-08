@@ -65,8 +65,10 @@ class AziendeController extends Controller
                 ->setParameter("ciudad", $_GET['citta'])
                 ->setParameter("search", "%$param%");
         else if ($param != null)
-            $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.titolo LIKE :search OR a.tag LIKE :search ORDER BY a.id DESC")->setParameter("search", "%$param%");
-        else  $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.citta = :param ORDER BY a.id DESC")->setParameter('param', $_GET['citta']);
+            $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.titolo LIKE :search OR a.tag LIKE :search ORDER BY a.id DESC")
+                ->setParameter("search", "%$param%");
+        else  $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.citta = :param ORDER BY a.id DESC")
+                ->setParameter('param', $_GET['citta']);
 
 
         // 2. crear paginacion
@@ -91,6 +93,8 @@ class AziendeController extends Controller
         // 4. retornar datos en json
         $helpers = $this->get(Helpers::class);
         return $helpers->json($data);
+
+
     }
 
 
@@ -104,42 +108,61 @@ class AziendeController extends Controller
         switch ($param) {
             case 1:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE   (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 100)->setParameter(2, 199)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 100)
+                    ->setParameter(2, 199)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 2:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 200)->setParameter(2, 299)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 200)
+                    ->setParameter(2, 299)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 3:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 300)->setParameter(2, 399)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 300)
+                    ->setParameter(2, 399)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 4:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 400)->setParameter(2, 499)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 400)
+                    ->setParameter(2, 499)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 5:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 500)->setParameter(2, 599)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 500)
+                    ->setParameter(2, 599)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 6:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 600)->setParameter(2, 699)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 600)
+                    ->setParameter(2, 699)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 7:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 700)->setParameter(2, 799)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 700)
+                    ->setParameter(2, 799)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 8:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 800)->setParameter(2, 899)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 800)
+                    ->setParameter(2, 899)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             case 9:
                 $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a  WHERE    (a.sottocategoria BETWEEN ?1 AND ?2) AND (a.citta = ?3) ORDER BY a.id DESC")
-                    ->setParameter(1, 900)->setParameter(2, 999)->setParameter(3, $_GET['citta']);
+                    ->setParameter(1, 900)
+                    ->setParameter(2, 999)
+                    ->setParameter(3, $_GET['citta']);
                 break;
             default:
-                $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.citta = :param  ORDER BY a.id DESC")->setParameter('param', 'milano');
+                $query = $em->createQuery("SELECT a FROM BackendBundle:Aziende a WHERE a.citta = :param  ORDER BY a.id DESC")
+                    ->setParameter('param', 'milano');
         }
 
 
