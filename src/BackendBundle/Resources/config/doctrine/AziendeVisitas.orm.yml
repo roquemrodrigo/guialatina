@@ -1,0 +1,35 @@
+BackendBundle\Entity\AziendeVisitas:
+    type: entity
+    table: Aziende_visitas
+    indexes:
+        aziendaID:
+            columns:
+                - aziendaID
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        aziendaid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: aziendaID
+        catAzienda:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: cat_azienda
+        visitas:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

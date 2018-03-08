@@ -1,0 +1,128 @@
+BackendBundle\Entity\Promozioni:
+    type: entity
+    table: Promozioni
+    indexes:
+        isgeoloc:
+            columns:
+                - isgeoloc
+        abilitato:
+            columns:
+                - abilitato
+        sottocategoria:
+            columns:
+                - sottocategoria
+                - zona
+                - abilitato
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        abilitato:
+            type: boolean
+            nullable: false
+        isgeoloc:
+            type: boolean
+            nullable: false
+        geoLat:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+            column: geo_lat
+        geoLng:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+            column: geo_lng
+        sottocategoria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        zona:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        titolo:
+            type: string
+            nullable: false
+            length: 320
+            options:
+                fixed: false
+        datapromo:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        galleria:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        indirizzo:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        citta:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+        cap:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+        videoSx1:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+            column: video_sx_1
+        videoSx2:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+            column: video_sx_2
+        videoDx1:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+            column: video_dx_1
+        videoDx2:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+            column: video_dx_2
+        descr:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

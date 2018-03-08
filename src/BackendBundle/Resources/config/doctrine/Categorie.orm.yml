@@ -1,0 +1,33 @@
+BackendBundle\Entity\Categorie:
+    type: entity
+    table: Categorie
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        logo:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        mapIcon:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: map_icon
+    lifecycleCallbacks: {  }

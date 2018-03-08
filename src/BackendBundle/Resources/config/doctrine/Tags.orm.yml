@@ -1,0 +1,27 @@
+BackendBundle\Entity\Tags:
+    type: entity
+    table: tags
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        sottocategoriaId:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: sottocategoria_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,60 @@
+BackendBundle\Entity\Clientes:
+    type: entity
+    table: clientes
+    indexes:
+        busqueda:
+            columns:
+                - nombre_cliente
+        nombre_cliente:
+            columns:
+                - nombre_cliente
+    id:
+        clienteId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: cliente_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreCliente:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                default: ''
+            column: nombre_cliente
+        direccionCliente:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                default: ''
+            column: direccion_cliente
+        telefonoCliente:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                default: ''
+            column: telefono_cliente
+        emailCliente:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                default: ''
+            column: email_cliente
+        activo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,5 @@
+news_list:
+  path:   /list
+  defaults: { _controller: "AppBundle:News:list" }
+  methods:  GET
+

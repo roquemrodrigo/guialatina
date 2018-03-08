@@ -1,0 +1,33 @@
+BackendBundle\Entity\Cartaceo:
+    type: entity
+    table: Cartaceo
+    indexes:
+        type:
+            columns:
+                - type
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        type:
+            type: boolean
+            nullable: false
+        image:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        link:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+
+
+aziende_list:
+  path:   /list
+  defaults: { _controller: "AppBundle:Aziende:list" }
+  methods:  GET
+
+aziende_search:
+    path:   /search/{param}
+    defaults: { _controller: "AppBundle:Aziende:search", param:null }
+    methods:  GET
+
+aziende_result_category:
+    path:   /category/{param}
+    defaults: { _controller: "AppBundle:Aziende:resultAziendaCategory", param:null }
+    methods:  GET
+
+aziende_sottocategoria:
+  path:   /sottocategoria/{param}
+  defaults: { _controller: "AppBundle:Aziende:sottocategoria", param:null }
+  methods:  GET
+
+
+aziende_categoria:
+  path:   /categoria
+  defaults: { _controller: "AppBundle:Aziende:categoria" }
+  methods:  GET
+
+aziende_detalle:
+  path:   /detalle/{id}
+  defaults: { _controller: "AppBundle:Aziende:detalle", id: null }
+  methods:  GET

@@ -1,0 +1,42 @@
+BackendBundle\Entity\Sottocategorie:
+    type: entity
+    table: Sottocategorie
+    indexes:
+        categoria2:
+            columns:
+                - categoria
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        categoria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        nome:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        modifMapIcon:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: modif_map_icon
+        tags:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

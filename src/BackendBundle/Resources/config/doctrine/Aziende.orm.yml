@@ -1,0 +1,226 @@
+BackendBundle\Entity\Aziende:
+    type: entity
+    table: Aziende
+    indexes:
+        isgeoloc:
+            columns:
+                - isgeoloc
+        geoloc:
+            columns:
+                - geo_lat
+                - geo_lng
+        email:
+            columns:
+                - email
+        abilitato:
+            columns:
+                - abilitato
+        ovunque:
+            columns:
+                - nogeo_dist
+        rank:
+            columns:
+                - rank
+        sottocategoria:
+            columns:
+                - sottocategoria
+        query_ricerca:
+            columns:
+                - titolo
+                - tag
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        abilitato:
+            type: boolean
+            nullable: false
+        cliente:
+            type: boolean
+            nullable: false
+        isgeoloc:
+            type: boolean
+            nullable: false
+        geoLat:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+            column: geo_lat
+        geoLng:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            options:
+                default: '0'
+            column: geo_lng
+        nogeoDist:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            column: nogeo_dist
+        sottocategoria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+        rank:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            options:
+                default: '3'
+        email:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        utente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+        titolo:
+            type: string
+            nullable: false
+            length: 320
+            options:
+                fixed: false
+        logo:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        descLunga:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: desc_lunga
+        galleria:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        tag:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        tagUtente:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: tag_utente
+        indirizzo:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        citta:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+        cap:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+        telefono:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+        fax:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+        cell:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+        whatzup:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+        skype:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+        facebook:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        fbProfile:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: fb_profile
+        youtube:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        gplus:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        twitter:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        linkedin:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        web:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
